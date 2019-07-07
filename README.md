@@ -9,7 +9,7 @@ Intend to be applied to projects which uses [pkg/errors](https://github.com/pkg/
 ## Insall
 
 ```
-go get -u github.com/cou929/efc
+go get -u github.com/cou929/efc/cmd/efc
 ```
 
 ## Example
