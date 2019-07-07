@@ -12,11 +12,15 @@ func main() {
 	myPrint("aa int %d, error %+v", 10, err)
 	o.Log("unexpected error. id = %d, err = %+v", 999, err)
 	myPrint2(999, "unexpected error. id = %d, err = %+v", 1, err)
+	format := "%+v %s"
+	fmt.Printf(format, err, "test")
 
 	// Not okay
 	fmt.Printf("%v", err)                                           // want `should use %\+v format for error type`
 	myPrint("int %d, error %#v", 10, err)                           // want `should use %\+v format for error type`
 	o.Log("unexpected error occurred. id = %d, err = %s", 999, err) // want `should use %\+v format for error type`
+	invalidFormat := "%s %s"
+	fmt.Printf(invalidFormat, err, "test")
 
 	// Handling %%
 	fmt.Printf("%% %+v", err)
